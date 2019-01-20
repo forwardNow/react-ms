@@ -38,6 +38,8 @@ module.exports = {
     // 不要动态设置 require
     "import/no-dynamic-require": "warn",
 
+    "no-use-before-define": "warn",
+
     "linebreak-style": [
       "error",
       "unix"
