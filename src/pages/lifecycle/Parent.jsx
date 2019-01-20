@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'antd';
 
 import Child from './Child';
 
@@ -29,7 +30,7 @@ export default class Parent extends React.Component {
     return (
       <div className="content">
         <h1>React 生命周期介绍</h1>
-        <button type="button" onClick={handleAdd}>点我</button>
+        <Button type="button" onClick={handleAdd}>点我</Button>
         <p>{count}</p>
         <Child count={count} />
       </div>

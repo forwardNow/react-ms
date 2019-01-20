@@ -1,5 +1,3 @@
-
-
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
@@ -70,7 +68,7 @@ module.exports = function anno(webpackEnv) {
   const env = getClientEnvironment(publicUrl);
 
   // common function to get style loaders
-  const getStyleLoaders = (cssOptions, preProcessor) => {
+  const getStyleLoaders = (cssOptions, preProcessor, preProcessorOptions = {}) => {
     const loaders = [
       isEnvDevelopment && require.resolve('style-loader'),
       isEnvProduction && {
@@ -111,6 +109,7 @@ module.exports = function anno(webpackEnv) {
         loader: require.resolve(preProcessor),
         options: {
           sourceMap: isEnvProduction && shouldUseSourceMap,
+          ...preProcessorOptions,
         },
       });
     }
@@ -460,6 +459,15 @@ module.exports = function anno(webpackEnv) {
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
                 'less-loader',
+                // less-loader options
+                {
+                  javascriptEnabled: true,
+                  modules: false,
+                  // 更改 less 文件的变量
+                  modifyVars: {
+                    // '@primary-color': '#f9c700',
+                  },
+                },
               ),
               sideEffects: true,
             },
