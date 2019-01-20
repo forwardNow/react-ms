@@ -27,7 +27,7 @@ export default class Parent extends React.Component {
     const { count } = this.state;
 
     return (
-      <div>
+      <div className="content">
         <h1>React 生命周期介绍</h1>
         <button type="button" onClick={handleAdd}>点我</button>
         <p>{count}</p>
