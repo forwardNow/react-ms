@@ -1,68 +1,171 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React 管理系统
 
-## Available Scripts
+## 1. 介绍
 
-In the project directory, you can run:
+基于 React 生态的管理系统。
 
-### `npm start`
+## 2. 编撰
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+吴钦飞（wuqinfei@qq.com）
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## 3. 目录结构
 
-### `npm test`
+```text
+react-ms/
+  config/       # 构建相关：webpack
+  public/       # 打包时会将其所有文件拷贝到 dist/
+  scripts/      # npm scripts
+  src/          # 源代码
+  .babelrc.js
+  .eslintrc.js
+  .gitignore
+  .stylelintrc.js
+  package.json
+  README.md
+  yarn.lock
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+react-ms/src/
+  common/       # 公共目录
+    assets/       # 资源
+      images/
+      style/
+    components/   # 组件
+  mock/         # 模拟的数据
+  pages/        # 页面
+  App.jsx
+  App.module.less
+  index.jsx
+```
 
-### `npm run build`
+## 4. 代码风格
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+对代码风格进行约束。
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### 4.1. 脚本（JavaScript/JSX）
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+使用 Airbnb 代码风格。
 
-### `npm run eject`
+安装：
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell
+# 查看依赖
+$ npm info "eslint-config-airbnb@latest" peerDependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+{ eslint: '^4.19.1 || ^5.3.0',
+  'eslint-plugin-import': '^2.14.0',
+  'eslint-plugin-jsx-a11y': '^6.1.1',
+  'eslint-plugin-react': '^7.11.0' }
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# 安装
+$ yarn add --dev eslint@5.6.0
+$ yarn add --dev eslint-config-airbnb@latest
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+配置 `react-ms/.eslintrc.js`：
 
-## Learn More
+```javascript
+module.exports = {
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "airbnb",
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  // 使用 babel 支持的语法
+  "parser": "babel-eslint",
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "impliedStrict": true,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    // 类方法里需要 this
+    "class-methods-use-this": "warn",
+    // 未使用的变量
+    "no-unused-vars": "warn",
+    // 优先使用解构
+    "prefer-destructuring": "warn",
+    // 不给参数重新赋值
+    "no-param-reassign": "warn",
+    "global-require": "warn",
+    // 不要内嵌三元表达式
+    "no-nested-ternary": "warn",
 
-### Code Splitting
+    // 不要动态设置 require
+    "import/no-dynamic-require": "warn",
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+    "no-use-before-define": "warn",
+  }
+};
+```
 
-### Analyzing the Bundle Size
+在 WebStorm 中启用：
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```text
+1. 打开 “偏好设置”
+2. 搜索 “eslint”，进行相应设置
+```
 
-### Making a Progressive Web App
+### 4.2. 样式
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+CSS 预处理器：LESS
 
-### Advanced Configuration
+BEM 约定：
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```text
+block_element__modifier
 
-### Deployment
+.navLeft_menu {}
+.menu_item {}
+.menu_item__active {}
+.menu_item__disabled {}
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+使用标准 CSS 风格，安装：
 
-### `npm run build` fails to minify
+```shell
+# 插件
+$ yarn add --dev stylelint stylelint-order
+# 配置
+$ yarn add --dev stylelint-config-standard stylelint-config-recess-order
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+配置 `react-ms/.stylelintrc.js`：
+
+```javascript
+module.exports = {
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "mixin",
+          "extend",
+          "content"
+        ]
+      }
+    ]
+  }
+};
+```
+
+在 WebStorm 中启用：
+
+```text
+1. 打开 “偏好设置”
+2. 搜索 “stylelint”，进行相应设置
+```

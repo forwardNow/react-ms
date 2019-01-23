@@ -1,36 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Row, Col } from 'antd';
 
-class App extends Component {
+import style from './App.module.less';
+
+import Header from './common/components/Header';
+import Footer from './common/components/Footer';
+import NavLeft from './common/components/NavLeft';
+
+export default class Admin extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {};
   }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit
-            <code>src/App.js</code>
-            and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Row className={style.container}>
+        <Col span={3} className={style.navLeft}>
+          <NavLeft />
+        </Col>
+        <Col span={21} className={style.main}>
+          <Header />
+          <Row className={style.content}>
+            内容区域
+          </Row>
+          <Footer />
+        </Col>
+      </Row>
     );
   }
 }
-
-export default App;

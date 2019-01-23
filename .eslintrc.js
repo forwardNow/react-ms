@@ -39,18 +39,5 @@ module.exports = {
     "import/no-dynamic-require": "warn",
 
     "no-use-before-define": "warn",
-
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
   }
-}
+};
