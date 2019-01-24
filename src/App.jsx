@@ -3,9 +3,9 @@ import { Row, Col } from 'antd';
 
 import style from './App.module.less';
 
-import Header from './common/components/Header';
-import Footer from './common/components/Footer';
-import NavLeft from './common/components/NavLeft';
+import Header from './common/components/Header/Header';
+import Footer from './common/components/Footer/Footer';
+import NavLeft from './common/components/NavLeft/NavLeft';
 
 export default class Admin extends React.Component {
   constructor(props) {

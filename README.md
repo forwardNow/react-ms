@@ -169,3 +169,9 @@ module.exports = {
 1. 打开 “偏好设置”
 2. 搜索 “stylelint”，进行相应设置
 ```
+
+## 5. 第三方接口
+
+### 5.1. 天气
+
+官网：[https://www.seniverse.com](https://www.seniverse.com)

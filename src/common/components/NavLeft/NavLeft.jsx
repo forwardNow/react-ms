@@ -3,7 +3,7 @@ import React from 'react';
 import { Menu } from 'antd';
 
 import menuConfig from '../../../mock/menuConfig';
-import style from './index.module.less';
+import style from './NavLeft.module.less';
 
 import logo from '../../assets/images/logo.svg';
 
@@ -41,7 +41,7 @@ export default class NavLeft extends React.Component {
     const { menuList } = this.state;
 
     return (
-      <div className={style.container}>
+      <div className={style.navLeft}>
         <div className={style.logo}>
           <img className={style.logo_img} src={logo} alt="" />
           <span className={style.logo_title}>React MS</span>
