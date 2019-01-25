@@ -2,7 +2,7 @@ import crypto from 'crypto';
 import querystring from 'querystring';
 
 import Http from '../../utils/http.util';
-import API from './Weather.api';
+import API from './weather.api';
 
 const KEY = 'ehlsifbvpkcmvmck'; // API key
 

@@ -1,0 +1,45 @@
+@import "../../common/assets/style/vars";
+
+.page {
+  display: flex;
+}
+
+.page_navLeft {
+  flex: 0 0 15%;
+  min-width: @fn-nav-left-min-width;
+  height: calc(100vh);
+  overflow: auto;
+  background-color: @fn-nav-left-bg-color;
+}
+
+.page_main {
+  flex: 1 1 85%;
+  height: calc(100vh);
+  overflow: auto;
+  //background: #fff;
+}
+
+.header {
+  // ...
+}
+
+.antBreadcrumb {
+  padding: 0 20px;
+  line-height: 40px;
+}
+
+.main {
+  // ...
+  min-height: calc(100% - @fn-header-height - @fn-footer-height - 40px);
+  margin: 0 20px 0 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  //box-shadow: 0 0 16px rgba(33, 107, 255, 0.5);
+}
+
+.footer {
+  // ...
+  line-height: @fn-footer-height;
+  color: @fn-font-color-light;
+  text-align: center;
+}

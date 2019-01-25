@@ -1,0 +1,50 @@
+@import "../../assets/style/vars";
+
+.header {
+  display: flex;
+  height: @fn-header-height;
+  padding: 0 20px;
+  line-height: @fn-header-height;
+  background-color: @fn-header-bg-color;
+  box-shadow: 0 0 16px rgba(33, 107, 255, 0.5);
+}
+
+.header_weather {
+  flex: 1 1 auto;
+  margin-right: 20px;
+  color: @fn-font-color-light;
+  text-align: right;
+}
+
+.header_tool {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.userInfo {
+  // ...
+}
+
+.logout {
+  margin-left: 20px;
+}
+
+.userInfo_icon {
+  // ...
+}
+
+.userInfo_text {
+  margin-left: 4px;
+}
+
+.breadcrumb {
+  flex: 1 1 50%;
+}
+
+.antBreadcrumb {
+  line-height: inherit;
+}
+
+.datetime {
+  margin-right: 1em;
+}

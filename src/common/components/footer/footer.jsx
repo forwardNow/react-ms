@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
   render() {
     return (
       <div>
-        Footer
+        &copy; 天道酬勤学院 | 京ICP备123456号
       </div>
     );
   }
