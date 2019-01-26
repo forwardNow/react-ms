@@ -28,20 +28,44 @@ react-ms/src/
   common/       # 公共目录
     assets/       # 资源
       images/
-      style/
+      styles/
     components/   # 组件
   mock/         # 模拟的数据
   pages/        # 页面
-  App.jsx
-  App.module.less
+  app.jsx
   index.jsx
 ```
 
-## 4. 代码风格
+## 4. 编程规范
 
-对代码风格进行约束。
+对命名风格、代码风格进行约束。
 
-### 4.1. 脚本（JavaScript/JSX）
+### 4.1. 命名风格
+
+目录名：
+
+* kebab-case（短横线命名）命名规则，如 `nav-left`
+* 使用单词的复数形式（组件目录除外）
+
+文件名：
+
+* 用 `.`（点）分隔文件类别，如
+
+  ```text
+  nav-left/
+    nav-left.jsx
+    nav-left.module.less
+
+  weather/
+    weather.api.js
+    weather.jsx
+    weather.module.less
+    weather.service.js
+  ```
+
+### 4.2. 代码风格
+
+#### 4.2.1. JavaScript/JSX
 
 使用 Airbnb 代码风格。
 
@@ -57,8 +81,7 @@ $ npm info "eslint-config-airbnb@latest" peerDependencies
   'eslint-plugin-react': '^7.11.0' }
 
 # 安装
-$ yarn add --dev eslint@5.6.0
-$ yarn add --dev eslint-config-airbnb@latest
+$ yarn add --dev eslint@5.6.0 eslint-config-airbnb@latest
 ```
 
 配置 `react-ms/.eslintrc.js`：
@@ -116,7 +139,7 @@ module.exports = {
 2. 搜索 “eslint”，进行相应设置
 ```
 
-### 4.2. 样式
+#### 4.2.2. css/less/scss
 
 CSS 预处理器：LESS
 
