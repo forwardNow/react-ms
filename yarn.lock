@@ -7070,15 +7070,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   dependencies:
     minimist "0.0.8"
 
-moment@2.x, moment@^2.22.2:
-  version "2.23.0"
-  resolved "http://registry.npm.taobao.org/moment/download/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
-  integrity sha1-dZ6kkayX1UusWtd2mW4qWMwbwiU=
-
-moment@^2.24.0:
-  version "2.24.0"
-  resolved "http://registry.npm.taobao.org/moment/download/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
-  integrity sha1-DQVdU/UFKqZTyfbraLtdEr9cK1s=
+moment@2.x, moment@^2.22.2, moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -10633,17 +10628,17 @@ stylelint-config-recess-order@^2.0.1:
   dependencies:
     stylelint-order "^2.0.0"
 
-stylelint-config-recommended@^2.1.0:
-  version "2.1.0"
-  resolved "http://registry.npm.taobao.org/stylelint-config-recommended/download/stylelint-config-recommended-2.1.0.tgz#f526d5c771c6811186d9eaedbed02195fee30858"
-  integrity sha1-9SbVx3HGgRGG2ertvtAhlf7jCFg=
+stylelint-config-recommended@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-recommended/-/stylelint-config-recommended-2.2.0.tgz#46ab139db4a0e7151fd5f94af155512886c96d3f"
+  integrity sha512-bZ+d4RiNEfmoR74KZtCKmsABdBJr4iXRiCso+6LtMJPw5rd/KnxUWTxht7TbafrTJK1YRjNgnN0iVZaJfc3xJA==
 
-stylelint-config-standard@^18.2.0:
-  version "18.2.0"
-  resolved "http://registry.npm.taobao.org/stylelint-config-standard/download/stylelint-config-standard-18.2.0.tgz#6283149aba7f64f18731aef8f0abfb35cf619e06"
-  integrity sha1-YoMUmrp/ZPGHMa748Kv7Nc9hngY=
+stylelint-config-standard@^18.3.0:
+  version "18.3.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-18.3.0.tgz#a2a1b788d2cf876c013feaff8ae276117a1befa7"
+  integrity sha512-Tdc/TFeddjjy64LvjPau9SsfVRexmTFqUhnMBrzz07J4p2dVQtmpncRF/o8yZn8ugA3Ut43E6o1GtjX80TFytw==
   dependencies:
-    stylelint-config-recommended "^2.1.0"
+    stylelint-config-recommended "^2.2.0"
 
 stylelint-order@^2.0.0:
   version "2.0.0"
